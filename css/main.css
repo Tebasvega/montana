@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    position: absolute;
+    top: 0; /* Asegura que se fije en la parte superior */
+    left: 0;
+    width: 100%;
+    padding: 2rem 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+}
+
+.logo, .menu li a {
+    color: white; /* Cambiado a blanco para contrastar con cielos oscuros comunes en parallax */
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.logo {
+    font-size: 2rem;
+}
+
+.menu {
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.parallax {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    background-color: #1a1a2e; /* Color de fondo por si las imágenes no cubren todo */
+}
+
+.parallax img {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    pointer-events: none; /* Tip senior: Evita que las imágenes bloqueen interacciones */
+    object-fit: cover;
+}
+
+/* Control de capas (Profundidad) */
+#mountain-blue { z-index: 1; }
+#mountain-red  { z-index: 2; }
+#trees-left    { z-index: 3; }
+#trees-bottom  { z-index: 4; }
+.titulo        { z-index: 5; } /* El texto se esconde detrás del hombre y las plantas frontales */
+#man           { z-index: 6; }
+#plants        { z-index: 7; }
+
+.titulo {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 5vw;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    letter-spacing: 5px;
+}
+
+.section {
+    padding: 6rem;
+    background-color: #111; /* Un negro un poco más suave */
+    color: white;
+    position: relative; /* Asegura que quede por encima de los elementos fixed/absolute del parallax */
+    z-index: 10;
+}
+
+.section h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #f1f1f1;
+}
+
+.section p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+
+
+
+
+
